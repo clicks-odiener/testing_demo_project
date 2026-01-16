@@ -6,6 +6,7 @@ namespace AppTest\Unit\B_SimpleClass;
 
 use App\Service\MathService;
 use Generator;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class A_FirstTest extends TestCase
@@ -16,9 +17,7 @@ class A_FirstTest extends TestCase
         yield [78, 7, 85];
     }
 
-    /**
-     * @dataProvider dataProviderTestSum
-     */
+    #[DataProvider('dataProviderTestSum')]
     public function testSum(int $a, int $b, int $expectedResult): void
     {
         $mathService = new MathService();

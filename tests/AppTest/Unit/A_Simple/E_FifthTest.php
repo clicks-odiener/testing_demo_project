@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AppTest\Unit\A_Simple;
 
 use Generator;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class E_FifthTest extends TestCase
@@ -15,9 +16,7 @@ class E_FifthTest extends TestCase
         yield [true, false];
     }
 
-    /**
-     * @dataProvider dataProvider
-     */
+    #[DataProvider('dataProvider')]
     public function testSuccess(bool $value1, bool $value2): void
     {
         $this->assertSame(
