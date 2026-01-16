@@ -13,6 +13,7 @@
         "phpunit/phpunit": "^12.5"
     },
     "require": {
-        "rinvex/countries": "^9.1"
+        "rinvex/countries": "^9.1",
+        "captainhook/captainhook": "^5.27"
     }
 }
