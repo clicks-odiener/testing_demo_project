@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" colors="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.2/phpunit.xsd" cacheDirectory=".phpunit.cache">
+    <coverage/>
+    <testsuites>
+        <testsuite name="AppUnitTest">
+            <directory>./tests/AppTest/Unit</directory>
+        </testsuite>
+        <testsuite name="AppIntegrationTest">
+            <directory>./tests/AppTest/Integration</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <const name="APPLICATION_PATH" value="/"/>
+    </php>
+    <source>
+        <include>
+            <directory suffix=".php">./src/App</directory>
+        </include>
+    </source>
+</phpunit>
