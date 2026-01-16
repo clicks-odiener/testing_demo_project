@@ -1,0 +1,33 @@
+<?php
+
+declare(strict_types=1);
+
+namespace AppTest\Unit\A_Simple;
+
+use PHPUnit\Framework\TestCase;
+
+class D_FourthTest extends TestCase
+{
+    public static function dataProvider(): array
+    {
+        return [
+            [true, true],
+            [true, false],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProvider
+     */
+    public function testSuccess(bool $value1, bool $value2): void
+    {
+        $this->assertSame(
+            $value1,
+            $value2,
+            sprintf(
+                "Annahme fehlgeschlagen, dass '%s' === '%s' ist.",
+                $value1,
+                $value2,
+            ));
+    }
+}
