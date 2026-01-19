@@ -21,6 +21,15 @@ class GrossPriceCalculator
         return round($grossPrice, $this->precision);
     }
 
+    public function calculateFromNetPriceWithCustomTaxRate(float $netPrice, float $customTaxRate): float
+    {
+        $this->taxRate->setRate($customTaxRate);
+
+        $grossPrice = $netPrice + ($netPrice * $this->taxRate->getRate());
+
+        return round($grossPrice, $this->precision);
+    }
+
     private function doSomethingNasty(): string
     {
         return 'Something nasty was done!';

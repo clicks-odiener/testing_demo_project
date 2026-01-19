@@ -29,6 +29,13 @@ class TaxRate
         return $this->rate;
     }
 
+    public function setRate(float $rate): self
+    {
+        $this->rate = $rate;
+
+        return $this;
+    }
+
     public function getCountryCode(): string
     {
         return $this->countryCode;
