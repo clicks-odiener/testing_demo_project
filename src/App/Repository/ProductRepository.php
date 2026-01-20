@@ -31,7 +31,7 @@ class ProductRepository
             ':currency' => $product->getCurrency(),
             ':tax_rate_locale' => $product->getTaxRate()->getLocale(),
             ':tax_rate_rate' => $product->getTaxRate()->getRate(),
-            ':tax_rate_country_code' => $product->getTaxRate()->getCountry()->getIsoAlpha3(),
+            ':tax_rate_country_code' => $product->getTaxRate()->getCountryCode(),
         ]);
 
         return (int) $this->pdo->lastInsertId();

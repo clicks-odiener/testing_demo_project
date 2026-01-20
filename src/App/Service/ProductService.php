@@ -19,15 +19,15 @@ class ProductService
         return $this->productRepository->findAll();
     }
 
-    public function insertProduct(array $data): void
+    public function insertProduct(array $data): int
     {
         $product = new Product(
             $data['name'],
-            $data['netPrice'],
+            $data['net_price'],
             $data['tax_rate'],
             $data['currency'],
         );
 
-        $this->productRepository->create($product);
+        return $this->productRepository->create($product);
     }
 }
