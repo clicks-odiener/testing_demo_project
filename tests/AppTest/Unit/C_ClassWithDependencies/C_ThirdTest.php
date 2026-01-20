@@ -25,15 +25,16 @@ class C_ThirdTest extends TestCase
 
     public function testCalculateFromNetPrice(): void
     {
-        $customTaxRate = 0.7;
+        $actualCustomTaxRate = 0.7;
+        $expectedCustomTaxRate = 0.7;
 
         $this->taxRateMock->expects($this->once())
             ->method('setRate')
-            ->with($customTaxRate)
+            ->with($expectedCustomTaxRate)
             ->willReturn($this->taxRateMock);
 
         $grossPriceCalculator = $this->getSUT();
 
-        $grossPriceCalculator->calculateFromNetPriceWithCustomTaxRate(586.0, $customTaxRate);
+        $grossPriceCalculator->calculateFromNetPriceWithCustomTaxRate(586.0, $actualCustomTaxRate);
     }
 }
