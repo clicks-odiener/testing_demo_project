@@ -23,9 +23,8 @@ class E_FifthTest extends TestCase
             $value1,
             $value2,
             sprintf(
-                "Annahme fehlgeschlagen, dass '%s' === '%s' ist.",
-                $value1,
-                $value2,
+                $value1 ? 'true' : 'false',
+                $value2 ? 'true' : 'false',
             ));
     }
 }
