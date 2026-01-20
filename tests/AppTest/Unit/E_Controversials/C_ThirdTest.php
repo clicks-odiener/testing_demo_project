@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace AppTest\Unit\C_ClassWithDependencies;
+namespace AppTest\Unit\E_Controversials;
 
 use App\Service\GrossPriceCalculatorSimple;
 use Generator;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
-class E_FifthTest extends TestCase
+class C_ThirdTest extends TestCase
 {
     private function getSUT(): GrossPriceCalculatorSimple
     {
