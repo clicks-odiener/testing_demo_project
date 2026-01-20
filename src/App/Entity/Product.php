@@ -6,6 +6,7 @@ namespace App\Entity;
 
 class Product
 {
+    private ?int $id = null;
     private string $name;
     private float $netPrice;
     private string $currency;
@@ -41,5 +42,10 @@ class Product
     public function getCurrency(): string
     {
         return $this->currency;
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
     }
 }
