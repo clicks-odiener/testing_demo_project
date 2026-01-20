@@ -10,9 +10,11 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^12.5"
+        "phpunit/phpunit": "*"
     },
     "require": {
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
         "rinvex/countries": "^9.1",
         "captainhook/captainhook": "^5.27"
     }
