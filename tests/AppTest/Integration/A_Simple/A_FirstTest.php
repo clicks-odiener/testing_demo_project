@@ -41,8 +41,8 @@ class A_FirstTest extends TestCase
             $productArray[] = $product->toArray();
         }
 
-        $productJson = json_encode($productArray);
+        $expectedArray = json_decode($expectedJson, true);
 
-        $this->assertSame($expectedJson, $productJson);
+        $this->assertSame($expectedArray, $productArray);
     }
 }
