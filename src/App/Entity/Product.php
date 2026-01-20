@@ -48,4 +48,14 @@ class Product
     {
         return $this->id;
     }
+
+    public function toArray(): array
+    {
+        return [
+            'name' => $this->name,
+            'net_price' => $this->netPrice,
+            'tax_rate' => $this->taxRate->getRate(),
+            'currency' => $this->currency,
+        ];
+    }
 }
