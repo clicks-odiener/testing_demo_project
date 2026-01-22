@@ -10,7 +10,7 @@ class A_FirstTest extends TestCase
 {
     public function testSuccess(): void
     {
-        $this->assertSame(true, true);
+        $this->assertSame(true, false);
     }
 
     public function testFail(): void
