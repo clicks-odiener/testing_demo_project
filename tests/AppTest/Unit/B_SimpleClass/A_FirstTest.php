@@ -27,10 +27,3 @@ class A_FirstTest extends TestCase
         $this->assertSame($expectedResult, $actualResult);
     }
 }
-
-// was ist ein SUT?
-// Konstanten
-// pirvate Methoden
-// Pre Commit Hook
-// Github Action
-// Code Coverage

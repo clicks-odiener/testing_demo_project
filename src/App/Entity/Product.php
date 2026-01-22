@@ -6,6 +6,7 @@ namespace App\Entity;
 
 class Product
 {
+    private ?int $id = null;
     private string $name;
     private float $netPrice;
     private string $currency;
@@ -41,5 +42,20 @@ class Product
     public function getCurrency(): string
     {
         return $this->currency;
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'name' => $this->name,
+            'net_price' => $this->netPrice,
+            'tax_rate' => $this->taxRate->getRate(),
+            'currency' => $this->currency,
+        ];
     }
 }

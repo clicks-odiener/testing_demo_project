@@ -18,15 +18,15 @@ class D_FourthTest extends TestCase
     }
 
     #[DataProvider('dataProvider')]
-    public function testSuccess(bool $value1, bool $value2): void
+    public function testIsSame($value1, $value2): void
     {
         $this->assertSame(
             $value1,
             $value2,
             sprintf(
                 "Annahme fehlgeschlagen, dass '%s' === '%s' ist.",
-                $value1,
-                $value2,
+                $value1 ? 'true' : 'false',
+                $value2 ? 'true' : 'false',
             ));
     }
 }

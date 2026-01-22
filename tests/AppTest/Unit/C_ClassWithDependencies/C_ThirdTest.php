@@ -8,38 +8,33 @@ use App\Entity\TaxRate;
 use App\Service\GrossPriceCalculator;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Rinvex\Country\Country;
 
 class C_ThirdTest extends TestCase
 {
-    private MockObject|Country $countryMock;
+    private MockObject|TaxRate $taxRateMock;
 
     protected function setUp(): void
     {
-        $this->countryMock = $this->createMock(Country::class);
+        $this->taxRateMock = $this->createMock(TaxRate::class);
     }
 
     private function getSUT(): GrossPriceCalculator
     {
-        $this->countryMock
-            ->method('getIsoAlpha3')
-            ->willReturn('DEU');
-
-        $taxRate = new TaxRate(
-            'de_DE',
-            0.19,
-            $this->countryMock,
-        );
-
-        return new GrossPriceCalculator($taxRate);
+        return new GrossPriceCalculator($this->taxRateMock);
     }
 
     public function testCalculateFromNetPrice(): void
     {
+        $actualCustomTaxRate = 0.7;
+        $expectedCustomTaxRate = 0.7;
+
+        $this->taxRateMock->expects($this->once())
+            ->method('setRate')
+            ->with($expectedCustomTaxRate)
+            ->willReturn($this->taxRateMock);
+
         $grossPriceCalculator = $this->getSUT();
 
-        $actualResult = $grossPriceCalculator->doSomethingNasty();
-
-        $this->assertSame('Something nasty was done!', $actualResult);
+        $grossPriceCalculator->calculateFromNetPriceWithCustomTaxRate(586.0, $actualCustomTaxRate);
     }
 }
