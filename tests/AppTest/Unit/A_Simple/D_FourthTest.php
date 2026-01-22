@@ -18,7 +18,7 @@ class D_FourthTest extends TestCase
     }
 
     #[DataProvider('dataProvider')]
-    public function testSuccess(bool $value1, bool $value2): void
+    public function testIsSame($value1, $value2): void
     {
         $this->assertSame(
             $value1,
